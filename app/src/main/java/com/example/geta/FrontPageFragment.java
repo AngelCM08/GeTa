@@ -1,64 +1,41 @@
 package com.example.geta;
 
 import android.os.Bundle;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.TranslateAnimation;
+import android.widget.ImageView;
 
-import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.NavController;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link FrontPageFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class FrontPageFragment extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public FrontPageFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment FrontPageFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static FrontPageFragment newInstance(String param1, String param2) {
-        FrontPageFragment fragment = new FrontPageFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+public class FrontPageFragment extends AppCompatActivity {
+    private ImageView logo;
+    private NavController navController;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+        setContentView(R.layout.fragment_front_page);
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_front_page, container, false);
+        logo = findViewById(R.id.logo);
+
+        Animation animacion = new TranslateAnimation(0, 0, 0, -150);
+        animacion.setDuration(1000);
+
+        animacion.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {}
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                logo.clearAnimation(); // Limpia la animación para que la imagen no vuelva a su posición anterior
+                logo.setTranslationY(30); // Cambia la posición de la imagen 200 píxeles hacia abajo
+                navController.navigate(R.id.loginFragment);
+            }
+            @Override
+            public void onAnimationRepeat(Animation animation) {}
+        });
+
+        logo.startAnimation(animacion);
     }
 }

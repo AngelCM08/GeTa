@@ -21,11 +21,6 @@
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" />
     <fragment
-        android:id="@+id/mainMenuFragment"
-        android:name="com.example.geta.MainMenuFragment"
-        android:label="fragment_main_menu"
-        tools:layout="@layout/fragment_main_menu" />
-    <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.geta.ProfileFragment"
         android:label="fragment_profile"
@@ -35,4 +30,34 @@
         android:name="com.example.geta.NewProjectFragment"
         android:label="fragment_new_project"
         tools:layout="@layout/fragment_new_project" />
+    <fragment
+        android:id="@+id/profileConfigurationFragment"
+        android:name="com.example.geta.ProfileConfigurationFragment"
+        android:label="fragment_profile_configuration"
+        tools:layout="@layout/fragment_profile_configuration" />
+    <fragment
+        android:id="@+id/newListFragment"
+        android:name="com.example.geta.NewListFragment"
+        android:label="fragment_new_list"
+        tools:layout="@layout/fragment_new_list" />
+    <fragment
+        android:id="@+id/newTaskFragment"
+        android:name="com.example.geta.NewTaskFragment"
+        android:label="fragment_new_task"
+        tools:layout="@layout/fragment_new_task" />
+    <fragment
+        android:id="@+id/blockFragment"
+        android:name="com.example.geta.BlockFragment"
+        android:label="fragment_block"
+        tools:layout="@layout/fragment_block" />
+    <fragment
+        android:id="@+id/blocksMenuFragment"
+        android:name="com.example.geta.BlocksMenuFragment"
+        android:label="fragment_blocks_menu"
+        tools:layout="@layout/fragment_blocks_menu" />
+    <fragment
+        android:id="@+id/taskDescriptionFragment"
+        android:name="com.example.geta.TaskDescriptionFragment"
+        android:label="fragment_task_description"
+        tools:layout="@layout/fragment_task_description" />
 </navigation>

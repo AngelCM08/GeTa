@@ -1,14 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterFragment">
+    android:background="#48799C"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/flexboxLayout2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_gravity="fill|fill_vertical"
+        android:background="#48799C"
+        app:alignContent="center"
+        app:alignItems="center"
+        app:flexWrap="wrap"
+        app:justifyContent="center">
 
-</FrameLayout>
+        <!-- Imagen del logo de la app en la parte superior -->
+        <ImageView
+            android:id="@+id/logo_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/logo_calendar"
+            android:layout_marginTop="-50dp"
+            android:layout_marginBottom="40dp"
+            app:layout_flexShrink="1" />
+
+        <!-- Input para el nombre del usuario -->
+        <EditText
+            android:id="@+id/nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/shape_input"
+            android:drawableStart="@drawable/person"
+            android:drawablePadding="10dp"
+            android:hint="Nombre"
+            android:inputType="textEmailAddress"
+            android:padding="15dp"
+            android:textColor="@color/gris_oscuro"
+            android:textColorHint="@color/gris_oscuro"
+            app:layout_flexShrink="1" />
+
+        <!-- Input para el login del usuario -->
+        <EditText
+            android:id="@+id/login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/shape_input"
+            android:drawableStart="@drawable/person"
+            android:drawablePadding="10dp"
+            android:hint="Login"
+            android:inputType="textEmailAddress"
+            android:padding="15dp"
+            android:textColor="@color/gris_oscuro"
+            android:textColorHint="@color/gris_oscuro"
+            app:layout_flexShrink="1" />
+
+        <!-- Input para el E-mail del usuario -->
+        <EditText
+            android:id="@+id/input_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/shape_input"
+            android:drawableStart="@drawable/person"
+            android:drawablePadding="10dp"
+            android:hint="E-mail"
+            android:inputType="textEmailAddress"
+            android:padding="15dp"
+            android:textColor="@color/gris_oscuro"
+            android:textColorHint="@color/gris_oscuro"
+            app:layout_flexShrink="1" />
+
+        <!-- Input para la contraseña del usuario -->
+        <EditText
+            android:id="@+id/input_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/shape_input"
+            android:drawableStart="@drawable/lock"
+            android:drawablePadding="10dp"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            android:padding="15dp"
+            android:textColor="@color/gris_oscuro"
+            android:textColorHint="@color/gris_oscuro"
+            app:layout_flexShrink="1" />
+
+        <!-- Input para la contraseña repetida del usuario -->
+        <EditText
+            android:id="@+id/input_repeat_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/shape_input"
+            android:drawableStart="@drawable/lock"
+            android:drawablePadding="10dp"
+            android:hint="Repetir Contraseña"
+            android:inputType="textPassword"
+            android:padding="15dp"
+            android:textColor="@color/gris_oscuro"
+            android:textColorHint="@color/gris_oscuro"
+            app:layout_flexShrink="1" />
+
+        <!-- Botones de Acceder y Registrarme en una fila -->
+        <com.google.android.flexbox.FlexboxLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:alignContent="center"
+            app:alignItems="center"
+            app:flexDirection="row"
+            app:justifyContent="space_between"
+            app:layout_flexShrink="1">
+
+            <!-- Botón para registrarse -->
+            <Button
+                android:id="@+id/register_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:background="@drawable/shape_button_light"
+                android:layout_marginLeft="10dp"
+                android:text="Cancelar"
+                app:layout_flexShrink="1" />
+
+            <!-- Botón para iniciar sesión -->
+            <Button
+                android:id="@+id/login_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:background="@drawable/shape_button_dark"
+                android:layout_marginRight="10dp"
+                android:text="Acceder"
+                app:layout_flexShrink="3" />
+
+        </com.google.android.flexbox.FlexboxLayout>
+    </com.google.android.flexbox.FlexboxLayout>
+</LinearLayout>

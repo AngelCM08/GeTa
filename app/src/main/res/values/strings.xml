@@ -2,4 +2,14 @@
     <string name="app_name">GeTa</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="registrarme">Registrarme</string>
+    <string name="acceder">Acceder</string>
+    <string name="he_olvidado_la_contrase_a">He olvidado la contraseña</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="login_email">Login/Email</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="repetir_contrase_a">Repetir Contraseña</string>
+    <string name="e_mail">E-mail</string>
+    <string name="login">Login</string>
+    <string name="nombre">Nombre</string>
 </resources>

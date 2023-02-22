@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scrollView2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#48799C"
@@ -28,7 +28,7 @@
             android:layout_marginTop="50dp"
             android:layout_marginBottom="50dp"
             android:scaleType="fitCenter"
-            android:src="@drawable/logo_principal"/>
+            android:src="@drawable/logo_principal" />
 
         <!-- Input para el correo electrónico del usuario -->
         <EditText
@@ -43,8 +43,8 @@
             android:inputType="textEmailAddress"
             android:padding="15dp"
             android:textColor="@color/gris_oscuro"
-            android:textSize="20sp"
-            android:textColorHint="@color/gris_oscuro"/>
+            android:textColorHint="@color/gris_oscuro"
+            android:textSize="20sp" />
 
         <!-- Input para la contraseña del usuario -->
         <EditText
@@ -59,19 +59,19 @@
             android:inputType="textPassword"
             android:padding="15dp"
             android:textColor="@color/gris_oscuro"
-            android:textSize="20sp"
-            android:textColorHint="@color/gris_oscuro"/>
+            android:textColorHint="@color/gris_oscuro"
+            android:textSize="20sp" />
 
         <!-- Texto de "He olvidado mi contraseña" -->
         <TextView
             android:id="@+id/forgot_password_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="20dp"
             android:layout_marginStart="10dp"
-            android:textSize="18sp"
+            android:paddingBottom="20dp"
+            android:text="@string/he_olvidado_la_contrase_a"
             android:textColor="@color/dark_blue"
-            android:text="@string/he_olvidado_la_contrase_a"/>
+            android:textSize="18sp" />
 
         <!-- Botones de Acceder y Registrarme en una fila -->
         <com.google.android.flexbox.FlexboxLayout
@@ -99,25 +99,25 @@
                     android:paddingTop="18dp"
                     android:paddingEnd="25dp"
                     android:paddingBottom="20dp"
-                    android:textSize="22sp"
                     android:text="@string/acceder"
-                    android:textColor="@color/beix" />
+                    android:textColor="@color/beix"
+                    android:textSize="22sp" />
 
                 <!-- Botón para registrarse -->
                 <Button
                     android:id="@+id/register_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="50dp"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="50dp"
+                    android:background="@drawable/shape_button_light"
                     android:paddingStart="25dp"
                     android:paddingTop="18dp"
                     android:paddingEnd="25dp"
                     android:paddingBottom="20dp"
-                    android:textSize="22sp"
+                    android:text="@string/registrarme"
                     android:textColor="@color/dark_blue"
-                    android:background="@drawable/shape_button_light"
-                    android:text="@string/registrarme"/>
+                    android:textSize="22sp" />
 
             </LinearLayout>
         </com.google.android.flexbox.FlexboxLayout>

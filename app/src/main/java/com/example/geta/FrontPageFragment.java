@@ -14,6 +14,8 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 
+import java.util.Objects;
+
 public class FrontPageFragment extends AppCompatActivity {
     private static final long SPLASH_SCREEN_DELAY = 3000;
     private ImageView logo;
@@ -22,6 +24,7 @@ public class FrontPageFragment extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_front_page);
+        Objects.requireNonNull(getSupportActionBar()).hide();
 
         logo = findViewById(R.id.logo);
 

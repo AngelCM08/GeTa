@@ -12,4 +12,8 @@
     <string name="e_mail">E-mail</string>
     <string name="login">Login</string>
     <string name="nombre">Nombre</string>
+    <string name="modificar_datos">Modificar Datos</string>
+    <string name="editar_usuario">Editar Usuario</string>
+    <string name="guardar">Guardar</string>
+    <string name="proyectos">Proyectos</string>
 </resources>

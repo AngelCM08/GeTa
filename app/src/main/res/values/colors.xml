@@ -11,5 +11,6 @@
     <color name="blue_main">#48799C</color>
     <color name="dark_blue">#203B50</color>
     <color name="beix">#BBB9B9</color>
+    <color name="trans">#00000000 </color>
 
 </resources>

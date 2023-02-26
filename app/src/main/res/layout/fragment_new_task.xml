@@ -1,14 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NewTaskFragment">
+    android:background="#48799C"
+    tools:context=".RecyclerBlocksMenuFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
-</FrameLayout>
+        <com.google.android.flexbox.FlexboxLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:alignContent="center"
+            app:alignItems="center"
+            app:flexDirection="row"
+            app:justifyContent="space_between">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/nombre_nueva_tarea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/shape_input"
+                    android:drawablePadding="10dp"
+                    android:hint="@string/nueva_tarea"
+                    android:inputType="textEmailAddress"
+                    android:padding="15dp"
+                    android:textColor="@color/gris_oscuro"
+                    android:textColorHint="@color/gris_oscuro"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/descripcion_nueva_tarea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/shape_input"
+                    android:drawablePadding="10dp"
+                    android:hint="Descripción muy larga, tanto como par aque ocupe varias lineas"
+                    android:inputType="textEmailAddress"
+                    android:minHeight="200dp"
+                    android:padding="15dp"
+                    android:textColor="@color/gris_oscuro"
+                    android:textColorHint="@color/gris_oscuro"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/usuario_asignado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/shape_input"
+                    android:drawablePadding="10dp"
+                    android:hint="@string/usuario_asignado"
+                    android:inputType="textEmailAddress"
+                    android:padding="15dp"
+                    android:textColor="@color/gris_oscuro"
+                    android:textColorHint="@color/gris_oscuro"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+
+        </com.google.android.flexbox.FlexboxLayout>
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/dark_blue"
+            android:padding="16dp"
+            android:text="@string/proyectos"
+            android:textAlignment="center"
+            android:textColor="@color/beix"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <!-- Imagen del logo de la app en la parte superior -->
+            <ImageView
+                android:id="@+id/user_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/dark_blue"
+                android:padding="15dp"
+                android:src="@drawable/default_user_image" />
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

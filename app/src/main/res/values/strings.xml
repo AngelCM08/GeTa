@@ -16,4 +16,6 @@
     <string name="editar_usuario">Editar Usuario</string>
     <string name="guardar">Guardar</string>
     <string name="proyectos">Proyectos</string>
+    <string name="usuario_asignado">Usuario Asignado</string>
+    <string name="nueva_tarea">Nueva Tarea</string>
 </resources>

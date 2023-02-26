@@ -25,17 +25,17 @@
                 android:background="@color/beix"
                 android:padding="16dp"
                 android:paddingStart="100dp"
-                android:text="@string/bloque"
+                android:text="@string/proyectos"
                 android:textAlignment="textStart"
                 android:textColor="@color/dark_blue"
                 android:textSize="34sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/cardView"
+                app:layout_constraintStart_toEndOf="@id/cardView_proyecto1"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardView"
+                android:id="@+id/cardView_proyecto1"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 app:cardCornerRadius="0dp"
@@ -44,7 +44,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/imatge"
+                    android:id="@+id/image"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     android:padding="15dp"

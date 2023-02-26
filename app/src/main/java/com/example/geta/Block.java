@@ -1,11 +1,11 @@
 package com.example.geta;
 
 public class Block {
-    String title;
-    int imatge;
+    String nombre;
+    int image;
 
-    public Block(String title, int imatge) {
-        this.title = title;
-        this.imatge = imatge;
+    public Block(String nombre, int image) {
+        this.nombre = nombre;
+        this.image = image;
     }
 }

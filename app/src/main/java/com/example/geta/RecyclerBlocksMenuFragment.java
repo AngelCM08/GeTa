@@ -12,23 +12,24 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.geta.databinding.FragmentRecyclerBlocksBinding;
+import com.example.geta.databinding.FragmentBlocksMenuBinding;
 import com.example.geta.databinding.ViewholderBlockBinding;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class RecyclerBlocksFragment extends Fragment {
+public class RecyclerBlocksMenuFragment extends Fragment {
 
-    private FragmentRecyclerBlocksBinding binding;
+    private FragmentBlocksMenuBinding binding;
     private BlocksViewModel blocksViewModel;
     private NavController navController;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return (binding = FragmentRecyclerBlocksBinding.inflate(inflater, container, false)).getRoot();
+        return (binding = FragmentBlocksMenuBinding.inflate(inflater, container, false)).getRoot();
     }
 
     @Override
@@ -38,21 +39,36 @@ public class RecyclerBlocksFragment extends Fragment {
         blocksViewModel = new ViewModelProvider(requireActivity()).get(BlocksViewModel.class);
         navController = Navigation.findNavController(view);
 
-        // navegar a NuevoElemento cuando se hace click en el FloatingActionButton
         /*binding.irANuevoBlock.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 navController.navigate(R.id.action_recyclerBlocksFragment_to_nuevoBlockFragment);
             }
         });*/
+        BlocksAdapter blocksAdapter = new BlocksAdapter();
 
-        // crear el Adaptador
-        BlocksAdapter blocksAdapter = new BlocksAdapter(blocksViewModel.blocksRepo.obtener());
+        binding.blocksMenuRecyclerView.setAdapter(blocksAdapter);
 
-        // asociar el Adaptador con el RecyclerView
-        binding.recyclerView.setAdapter(blocksAdapter);
+        binding.blocksMenuRecyclerView.addItemDecoration(new DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL));
 
-        // obtener el array de Elementos, y pasarselo al Adaptador
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(
+                ItemTouchHelper.UP | ItemTouchHelper.DOWN,
+                ItemTouchHelper.RIGHT  | ItemTouchHelper.LEFT) {
+
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                return true;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                int posicion = viewHolder.getAdapterPosition();
+                Block block = blocksAdapter.obtenerBlock(posicion);
+                blocksViewModel.eliminar(block);
+
+            }
+        }).attachToRecyclerView(binding.blocksMenuRecyclerView);
+
         blocksViewModel.obtener().observe(getViewLifecycleOwner(), new Observer<List<Block>>() {
             @Override
             public void onChanged(List<Block> blocks) {
@@ -63,53 +79,45 @@ public class RecyclerBlocksFragment extends Fragment {
 
     class BlocksAdapter extends RecyclerView.Adapter<BlockViewHolder> {
 
-        // referencia al Array que obtenemos del ViewModel
-        List<Block> blocks = new ArrayList<>();
+        List<Block> blocks;
 
-        // Constructor
-        public BlocksAdapter(List<Block> blocks){
-            this.blocks = blocks;
-        }
-
-        // crear un nuevo ViewHolder
         @NonNull
         @Override
         public BlockViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
             return new BlockViewHolder(ViewholderBlockBinding.inflate(getLayoutInflater(), parent, false));
         }
 
-        // rellenar un ViewHolder en una posición del Recycler con los datos del block que
-        // esté en esa misma posición en el Array
         @Override
         public void onBindViewHolder(@NonNull BlockViewHolder holder, int position) {
-
             Block block = blocks.get(position);
 
-            holder.binding.title.setText(block.title);
-            holder.binding.imatge.setImageResource(block.imatge);
+            holder.binding.title.setText(block.nombre);
+            holder.binding.image.setImageResource(block.image);
 
-            /*holder.binding.cardView.setOnClickListener(new View.OnClickListener() {
+            /*holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    navController.navigate(R.id.);
+                    blocksViewModel.seleccionar(block);
+                    navController.navigate(R.id.action_recyclerBlocksFragment_to_mostrarBlockFragment);
                 }
             });*/
         }
 
-        // informar al Recycler de cuántos blocks habrá en la lista
         @Override
         public int getItemCount() {
             return blocks != null ? blocks.size() : 0;
         }
 
-        // establecer la referencia a la lista, y notificar al Recycler para que se regenere
         public void establecerLista(List<Block> blocks){
             this.blocks = blocks;
             notifyDataSetChanged();
         }
+
+        public Block obtenerBlock(int posicion){
+            return blocks.get(posicion);
+        }
     }
 
-    // Clase para inicializar el ViewBinding en los ViewHolder
     static class BlockViewHolder extends RecyclerView.ViewHolder {
         private final ViewholderBlockBinding binding;
 

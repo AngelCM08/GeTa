@@ -1,52 +1,66 @@
 package com.example.geta;
 
 import android.app.Application;
-
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class BlocksViewModel extends AndroidViewModel {
-    BlocksRepo blocksRepo;
-    MutableLiveData<List<Block>> listElementosMutableLiveData = new MutableLiveData<>();
+
+    BlocksRepositorio blocksRepositorio;
+
+    MutableLiveData<List<Block>> listBlocksMutableLiveData = new MutableLiveData<>();
+    MutableLiveData<Block> blockSeleccionado = new MutableLiveData<>();
 
     public BlocksViewModel(@NonNull Application application) {
         super(application);
 
-        blocksRepo = new BlocksRepo();
-        listElementosMutableLiveData.setValue(blocksRepo.obtener());
+        blocksRepositorio = new BlocksRepositorio();
+
+        listBlocksMutableLiveData.setValue(blocksRepositorio.obtener());
     }
 
+
     MutableLiveData<List<Block>> obtener(){
-        return listElementosMutableLiveData;
+        return listBlocksMutableLiveData;
     }
 
     void insertar(Block block){
-        blocksRepo.insertar(block, new BlocksRepo.Callback() {
+        blocksRepositorio.insertar(block, new BlocksRepositorio.Callback() {
             @Override
             public void cuandoFinalice(List<Block> blocks) {
-                listElementosMutableLiveData.setValue(blocks);
+                listBlocksMutableLiveData.setValue(blocks);
             }
         });
     }
 
     void eliminar(Block block){
-        blocksRepo.eliminar(block, new BlocksRepo.Callback() {
+        blocksRepositorio.eliminar(block, new BlocksRepositorio.Callback() {
             @Override
             public void cuandoFinalice(List<Block> blocks) {
-                listElementosMutableLiveData.setValue(blocks);
+                listBlocksMutableLiveData.setValue(blocks);
             }
         });
     }
 
-    void actualizar(Block block, String title, int imatge){
-        blocksRepo.actualizar(block, title, imatge, new BlocksRepo.Callback() {
+    void actualizar(Block block, String nombre, int image){
+        blocksRepositorio.actualizar(block, nombre, image, new BlocksRepositorio.Callback() {
             @Override
             public void cuandoFinalice(List<Block> blocks) {
-                listElementosMutableLiveData.setValue(blocks);
+                listBlocksMutableLiveData.setValue(blocks);
             }
         });
+    }
+
+
+    void seleccionar(Block block){
+        blockSeleccionado.setValue(block);
+    }
+
+    MutableLiveData<Block> seleccionado(){
+        return blockSeleccionado;
     }
 }

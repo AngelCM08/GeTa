@@ -2,8 +2,8 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/navmap"
-    app:startDestination="@id/frontPageFragment">
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/frontPageFragment"
@@ -14,17 +14,32 @@
         android:id="@+id/loginFragment"
         android:name="com.example.geta.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_blocksMenuFragment"
+            app:destination="@id/blocksMenuFragment" />
+    </fragment>
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.example.geta.RegisterFragment"
         android:label="fragment_register"
-        tools:layout="@layout/fragment_register" />
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_blocksMenuFragment"
+            app:destination="@id/blocksMenuFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.geta.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_profileConfigurationFragment"
+            app:destination="@id/profileConfigurationFragment" />
+    </fragment>
     <fragment
         android:id="@+id/newProjectFragment"
         android:name="com.example.geta.NewProjectFragment"
@@ -49,12 +64,32 @@
         android:id="@+id/blockFragment"
         android:name="com.example.geta.BlockFragment"
         android:label="fragment_block"
-        tools:layout="@layout/fragment_block" />
+        tools:layout="@layout/fragment_block" >
+        <action
+            android:id="@+id/action_blockFragment_to_newListFragment"
+            app:destination="@id/newListFragment" />
+        <action
+            android:id="@+id/action_blockFragment_to_newTaskFragment"
+            app:destination="@id/newTaskFragment" />
+        <action
+            android:id="@+id/action_blockFragment_to_taskDescriptionFragment"
+            app:destination="@id/taskDescriptionFragment" />
+    </fragment>
     <fragment
         android:id="@+id/blocksMenuFragment"
         android:name="com.example.geta.BlocksMenuFragment"
         android:label="fragment_blocks_menu"
-        tools:layout="@layout/fragment_blocks_menu" />
+        tools:layout="@layout/fragment_blocks_menu" >
+        <action
+            android:id="@+id/action_blocksMenuFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_blocksMenuFragment_to_blockFragment"
+            app:destination="@id/blockFragment" />
+        <action
+            android:id="@+id/action_blocksMenuFragment_to_newProjectFragment"
+            app:destination="@id/newProjectFragment" />
+    </fragment>
     <fragment
         android:id="@+id/taskDescriptionFragment"
         android:name="com.example.geta.TaskDescriptionFragment"

@@ -95,9 +95,4 @@
         android:name="com.example.geta.TaskDescriptionFragment"
         android:label="fragment_task_description"
         tools:layout="@layout/fragment_task_description" />
-    <fragment
-        android:id="@+id/blocksMenusFragment"
-        android:name="com.example.geta.BlocksMenusFragment"
-        android:label="fragment_blocks_menus"
-        tools:layout="@layout/fragment_blocks_menus" />
 </navigation>

@@ -18,41 +18,40 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:background="@color/beix">
+            android:background="@color/block_color1">
 
             <TextView
                 android:id="@+id/title"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="80dp"
-                android:background="@color/beix"
                 android:padding="16dp"
-                android:text="@string/proyectos"
-                android:textAlignment="textStart"
+                android:paddingEnd="80dp"
+                android:text="Tarea"
+                android:textAlignment="center"
                 android:textColor="@color/dark_blue"
                 android:textSize="34sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/cardView"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"  />
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardView"
-                android:layout_width="80dp"
-                android:layout_height="match_parent"
-                app:cardCornerRadius="0dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    app:cardCornerRadius="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-                <ImageView
-                    android:id="@+id/image"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:padding="15dp"
-                    android:background="@color/beix"
-                    android:src="@drawable/default_user_image" />
-            </androidx.cardview.widget.CardView>
-
+                    <ImageView
+                        android:id="@+id/cross"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:padding="15dp"
+                        android:background="@color/block_color1"
+                        android:src="@drawable/cross" />
+                </androidx.cardview.widget.CardView>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </LinearLayout>

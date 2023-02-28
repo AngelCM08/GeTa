@@ -11,7 +11,7 @@
     android:padding="16dp">
 
     <com.google.android.flexbox.FlexboxLayout
-        android:id="@+id/flexboxLayout2"
+        android:id="@+id/flexboxLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="fill|fill_vertical"

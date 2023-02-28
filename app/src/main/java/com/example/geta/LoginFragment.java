@@ -13,10 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.example.geta.databinding.FragmentBlocksMenuBinding;
 import com.example.geta.databinding.FragmentLoginBinding;
-
-import java.util.Objects;
 
 public class LoginFragment extends Fragment {
 
@@ -34,7 +31,11 @@ public class LoginFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
-
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        return (binding = FragmentLoginBinding.inflate(inflater, container, false)).getRoot();
+    }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -62,9 +63,4 @@ public class LoginFragment extends Fragment {
         });
     }
 
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return (binding = FragmentLoginBinding.inflate(inflater, container, false)).getRoot();
-    }
 }

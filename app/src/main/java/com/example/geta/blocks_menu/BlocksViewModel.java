@@ -1,11 +1,10 @@
-package com.example.geta;
+package com.example.geta.blocks_menu;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class BlocksViewModel extends AndroidViewModel {

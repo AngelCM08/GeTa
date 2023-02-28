@@ -12,5 +12,9 @@
     <color name="dark_blue">#203B50</color>
     <color name="beix">#BBB9B9</color>
     <color name="trans">#00000000 </color>
+    <color name="block_color1">#97C2E3 </color>
+    <color name="block_color2">#6DD6B0 </color>
+    <color name="block_color3">#8E82D9 </color>
+    <color name="block_color4">#E39A9A </color>
 
 </resources>

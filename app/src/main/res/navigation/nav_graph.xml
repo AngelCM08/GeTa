@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/blockFragment">
 
     <fragment
         android:id="@+id/frontPageFragment"
@@ -62,7 +62,7 @@
         tools:layout="@layout/fragment_new_task" />
     <fragment
         android:id="@+id/blockFragment"
-        android:name="com.example.geta.BlockFragment"
+        android:name="com.example.geta.listas_tasks.BlockFragment"
         android:label="fragment_block"
         tools:layout="@layout/fragment_block" >
         <action
@@ -77,7 +77,7 @@
     </fragment>
     <fragment
         android:id="@+id/blocksMenuFragment"
-        android:name="com.example.geta.BlocksMenuFragment"
+        android:name="com.example.geta.blocks_menu.BlocksMenuFragment"
         android:label="fragment_blocks_menu"
         tools:layout="@layout/fragment_blocks_menu" >
         <action

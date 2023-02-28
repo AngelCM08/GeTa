@@ -18,4 +18,6 @@
     <string name="proyectos">Proyectos</string>
     <string name="usuario_asignado">Usuario Asignado</string>
     <string name="nueva_tarea">Nueva Tarea</string>
+    <string name="lista">Lista</string>
+    <string name="nombre_proyecto">Nombre Proyecto</string>
 </resources>

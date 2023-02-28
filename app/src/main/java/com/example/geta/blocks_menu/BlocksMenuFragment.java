@@ -1,4 +1,4 @@
-package com.example.geta;
+package com.example.geta.blocks_menu;
 
 import android.os.Bundle;
 

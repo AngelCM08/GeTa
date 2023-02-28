@@ -28,7 +28,7 @@
                 tools:listitem="@layout/viewholder_task" />
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardView_proyecto1"
+                android:id="@+id/cardView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:cardCornerRadius="0dp">

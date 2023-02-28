@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.geta.databinding.FragmentBlocksMenuBinding;
 import com.example.geta.databinding.ViewholderBlockBinding;
+import com.example.geta.databinding.ViewholderBlockMenuBinding;
 
 import java.util.List;
 
@@ -30,6 +31,11 @@ public class RecyclerBlocksMenuFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return (binding = FragmentBlocksMenuBinding.inflate(inflater, container, false)).getRoot();
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
     }
 
     @Override
@@ -84,7 +90,7 @@ public class RecyclerBlocksMenuFragment extends Fragment {
         @NonNull
         @Override
         public BlockViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            return new BlockViewHolder(ViewholderBlockBinding.inflate(getLayoutInflater(), parent, false));
+            return new BlockViewHolder(ViewholderBlockMenuBinding.inflate(getLayoutInflater(), parent, false));
         }
 
         @Override
@@ -119,9 +125,9 @@ public class RecyclerBlocksMenuFragment extends Fragment {
     }
 
     static class BlockViewHolder extends RecyclerView.ViewHolder {
-        private final ViewholderBlockBinding binding;
+        private final ViewholderBlockMenuBinding binding;
 
-        public BlockViewHolder(ViewholderBlockBinding binding) {
+        public BlockViewHolder(ViewholderBlockMenuBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }

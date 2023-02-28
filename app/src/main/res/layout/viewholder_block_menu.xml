@@ -2,11 +2,9 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:layout_marginBottom="20dp">
+    android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -20,21 +18,33 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/blocksMenuRecyclerView"
+            <TextView
+                android:id="@+id/title"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/viewholder_task" />
+                android:layout_height="80dp"
+                android:background="@color/beix"
+                android:padding="16dp"
+                android:paddingStart="100dp"
+                android:text="@string/proyectos"
+                android:textAlignment="textStart"
+                android:textColor="@color/dark_blue"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cardView_proyecto1"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView_proyecto1"
-                android:layout_width="match_parent"
+                android:layout_width="80dp"
                 android:layout_height="match_parent"
-                app:cardCornerRadius="0dp">
+                app:cardCornerRadius="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-                <TextView
-                    android:id="@+id/title"
+                <ImageView
+                    android:id="@+id/image"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     android:padding="15dp"

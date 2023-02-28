@@ -34,7 +34,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    tools:listitem="@layout/viewholder_block" />
+                    tools:listitem="@layout/viewholder_block_menu" />
 
             </com.google.android.flexbox.FlexboxLayout>
         </ScrollView>

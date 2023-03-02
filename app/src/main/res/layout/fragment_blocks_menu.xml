@@ -52,7 +52,7 @@
             app:layout_constraintTop_toTopOf="parent"/>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardView"
+            android:id="@+id/user_profile"
             android:layout_width="75dp"
             android:layout_height="75dp"
             app:layout_constraintBottom_toBottomOf="parent"

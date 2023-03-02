@@ -4,7 +4,7 @@ import java.util.List;
 
 public class TaskList {
     String nombre;
-    List<Task> taskList;
+    public List<Task> taskList;
 
     public TaskList(String nombre, List<Task> taskList) {
         this.nombre = nombre;

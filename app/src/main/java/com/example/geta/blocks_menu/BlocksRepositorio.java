@@ -1,6 +1,7 @@
 package com.example.geta.blocks_menu;
 
 import com.example.geta.R;
+import com.example.geta.listas_tasks.TaskListRepositorio;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,14 +14,14 @@ public class BlocksRepositorio {
     }
 
     BlocksRepositorio(){
-        blocks.add(new Block("Tareas de Casa", R.drawable.tareas_casa, "block_color1"));
-        blocks.add(new Block("Proyecto Alfa", R.drawable.alfa, "block_color2"));
-        blocks.add(new Block("Proyecto Beta", R.drawable.beta, "block_color3"));
-        blocks.add(new Block("Proyecto Gamma", R.drawable.gamma, "block_color4"));
-        blocks.add(new Block("Tareas de Casa", R.drawable.tareas_casa, "block_color1"));
-        blocks.add(new Block("Proyecto Alfa", R.drawable.alfa, "block_color2"));
-        blocks.add(new Block("Proyecto Beta", R.drawable.beta, "block_color3"));
-        blocks.add(new Block("Proyecto Gamma", R.drawable.gamma, "block_color4"));
+        blocks.add(new Block("Tareas de Casa", R.drawable.tareas_casa, R.color.block_color1, new TaskListRepositorio().obtener()));
+        blocks.add(new Block("Proyecto Alfa", R.drawable.alfa, R.color.block_color2, new TaskListRepositorio().obtener()));
+        blocks.add(new Block("Proyecto Beta", R.drawable.beta, R.color.block_color3, new TaskListRepositorio().obtener()));
+        blocks.add(new Block("Proyecto Gamma", R.drawable.gamma, R.color.block_color4, new TaskListRepositorio().obtener()));
+        blocks.add(new Block("Tareas de Casa", R.drawable.tareas_casa, R.color.block_color1, new TaskListRepositorio().obtener()));
+        blocks.add(new Block("Proyecto Alfa", R.drawable.alfa, R.color.block_color2, new TaskListRepositorio().obtener()));
+        blocks.add(new Block("Proyecto Beta", R.drawable.beta, R.color.block_color3, new TaskListRepositorio().obtener()));
+        blocks.add(new Block("Proyecto Gamma", R.drawable.gamma, R.color.block_color4, new TaskListRepositorio().obtener()));
     }
 
     List<Block> obtener() {

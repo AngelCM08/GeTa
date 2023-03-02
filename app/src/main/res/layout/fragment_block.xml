@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#48799C">
-
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
@@ -20,11 +19,12 @@
             android:orientation="vertical">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/blocksMenuRecyclerView"
+                android:id="@+id/taskListRecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/viewholder_block_principal" />
+                android:orientation="horizontal"
+                tools:listitem="@layout/viewholder_tasklist" />
 
         </LinearLayout>
     </ScrollView>

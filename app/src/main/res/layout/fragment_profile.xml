@@ -99,9 +99,8 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <!-- Botón para Modificar datos -->
                     <Button
-                        android:id="@+id/modify_button"
+                        android:id="@+id/modifyData"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"

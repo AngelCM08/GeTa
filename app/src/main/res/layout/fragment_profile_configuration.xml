@@ -130,7 +130,7 @@
 
                 <!-- Botón para Modificar datos -->
                     <Button
-                        android:id="@+id/modify_button"
+                        android:id="@+id/save_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"

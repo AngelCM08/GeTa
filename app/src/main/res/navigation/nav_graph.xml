@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/blockFragment">
+    app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/frontPageFragment"
@@ -30,6 +30,9 @@
         <action
             android:id="@+id/action_registerFragment_to_blocksMenuFragment"
             app:destination="@id/blocksMenuFragment" />
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -39,6 +42,9 @@
         <action
             android:id="@+id/action_profileFragment_to_profileConfigurationFragment"
             app:destination="@id/profileConfigurationFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_blocksMenuFragment"
+            app:destination="@id/blocksMenuFragment" />
     </fragment>
     <fragment
         android:id="@+id/newProjectFragment"
@@ -49,7 +55,11 @@
         android:id="@+id/profileConfigurationFragment"
         android:name="com.example.geta.ProfileConfigurationFragment"
         android:label="fragment_profile_configuration"
-        tools:layout="@layout/fragment_profile_configuration" />
+        tools:layout="@layout/fragment_profile_configuration" >
+        <action
+            android:id="@+id/action_profileConfigurationFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
     <fragment
         android:id="@+id/newListFragment"
         android:name="com.example.geta.NewListFragment"

@@ -9,7 +9,6 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.geta.R;
 import com.example.geta.databinding.FragmentBlocksMenuBinding;
 import com.example.geta.databinding.ViewholderBlockMenuBinding;
 
@@ -51,17 +51,23 @@ public class BlocksMenuFragment extends Fragment {
         blocksViewModel = new ViewModelProvider(requireActivity()).get(BlocksViewModel.class);
         navController = Navigation.findNavController(view);
 
-        /*binding.irANuevoBlock.setOnClickListener(new View.OnClickListener() {
+        binding.userProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.action_recyclerBlocksFragment_to_nuevoBlockFragment);
+                navController.navigate(R.id.action_blocksMenuFragment_to_profileFragment);
+            }
+        });
+
+        /*binding.addBlock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_blocksMenuFragment_to_newProjectFragment);
             }
         });*/
+
         BlocksAdapter blocksAdapter = new BlocksAdapter();
 
         binding.blocksMenuRecyclerView.setAdapter(blocksAdapter);
-
-        binding.blocksMenuRecyclerView.addItemDecoration(new DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL));
 
         new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(
                 ItemTouchHelper.UP | ItemTouchHelper.DOWN,
@@ -89,30 +95,28 @@ public class BlocksMenuFragment extends Fragment {
         });
     }
 
-    class BlocksAdapter extends RecyclerView.Adapter<BlockViewHolder> {
+    class BlocksAdapter extends RecyclerView.Adapter<BlockMenuViewHolder> {
 
         List<Block> blocks;
 
         @NonNull
         @Override
-        public BlockViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            return new BlockViewHolder(ViewholderBlockMenuBinding.inflate(getLayoutInflater(), parent, false));
+        public BlockMenuViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            return new BlockMenuViewHolder(ViewholderBlockMenuBinding.inflate(getLayoutInflater(), parent, false));
         }
 
         @Override
-        public void onBindViewHolder(@NonNull BlockViewHolder holder, int position) {
+        public void onBindViewHolder(@NonNull BlockMenuViewHolder holder, int position) {
             Block block = blocks.get(position);
 
             holder.binding.title.setText(block.nombre);
             holder.binding.image.setImageResource(block.image);
 
-            /*holder.itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    blocksViewModel.seleccionar(block);
-                    navController.navigate(R.id.action_recyclerBlocksFragment_to_mostrarBlockFragment);
-                }
-            });*/
+            holder.binding.block.setOnClickListener(v -> {
+                blocksViewModel.seleccionar(block);
+
+                navController.navigate(R.id.action_blocksMenuFragment_to_blockFragment);
+            });
         }
 
         @Override
@@ -130,10 +134,10 @@ public class BlocksMenuFragment extends Fragment {
         }
     }
 
-    static class BlockViewHolder extends RecyclerView.ViewHolder {
+    static class BlockMenuViewHolder extends RecyclerView.ViewHolder {
         private final ViewholderBlockMenuBinding binding;
 
-        public BlockViewHolder(ViewholderBlockMenuBinding binding) {
+        public BlockMenuViewHolder(ViewholderBlockMenuBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }

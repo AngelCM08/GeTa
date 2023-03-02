@@ -18,8 +18,6 @@ import com.example.geta.databinding.FragmentLoginBinding;
 public class LoginFragment extends Fragment {
 
     NavController navController;
-    Button login_button;
-    Button register_button;
     FragmentLoginBinding binding;
 
     public LoginFragment() {
@@ -43,19 +41,14 @@ public class LoginFragment extends Fragment {
 
         navController = Navigation.findNavController(view);
 
-        login_button = view.findViewById(R.id.login_button);
-
-        login_button.setOnClickListener(new View.OnClickListener() {
+        binding.loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 navController.navigate(R.id.action_loginFragment_to_blocksMenuFragment);
             }
         });
 
-
-        register_button = view.findViewById(R.id.register_button);
-
-        register_button.setOnClickListener(new View.OnClickListener() {
+        binding.registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 navController.navigate(R.id.action_loginFragment_to_registerFragment);

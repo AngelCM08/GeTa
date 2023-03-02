@@ -13,6 +13,7 @@
         app:cardCornerRadius="20dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/element"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
@@ -36,7 +37,6 @@
                 app:layout_constraintTop_toTopOf="parent"  />
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/cardView"
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
                     app:cardCornerRadius="0dp"

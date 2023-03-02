@@ -16,6 +16,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.geta.R;
 import com.example.geta.blocks_menu.Block;
 import com.example.geta.databinding.FragmentBlockBinding;
 import com.example.geta.databinding.ViewholderTaskMenuBinding;
@@ -40,6 +41,10 @@ public class BlockFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        if (getArguments() != null) {
+            block_color = getArguments().getInt("color");
+            // Usa el valor de "color" como sea necesario
+        }
         return (binding = FragmentBlockBinding.inflate(inflater, container, false)).getRoot();
     }
 
@@ -139,7 +144,8 @@ public class BlockFragment extends Fragment {
             Task task = this.taskList.get(position);
 
             holder.binding.title.setText(task.nombre);
-            //holder.binding.element.setBackgroundColor();
+            holder.binding.element.setBackgroundColor(getResources().getColor(block_color));
+            holder.binding.cross.setBackgroundColor(getResources().getColor(block_color));
         }
 
         @Override

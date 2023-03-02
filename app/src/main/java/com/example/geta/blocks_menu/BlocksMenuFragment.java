@@ -113,9 +113,10 @@ public class BlocksMenuFragment extends Fragment {
             holder.binding.image.setImageResource(block.image);
 
             holder.binding.block.setOnClickListener(v -> {
+                Bundle bundle = new Bundle();
+                bundle.putInt("color", block.color);
                 blocksViewModel.seleccionar(block);
-
-                navController.navigate(R.id.action_blocksMenuFragment_to_blockFragment);
+                navController.navigate(R.id.action_blocksMenuFragment_to_blockFragment, bundle);
             });
         }
 

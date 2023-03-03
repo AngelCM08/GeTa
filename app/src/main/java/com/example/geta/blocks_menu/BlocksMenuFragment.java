@@ -58,12 +58,26 @@ public class BlocksMenuFragment extends Fragment {
             }
         });
 
-        /*binding.addBlock.setOnClickListener(new View.OnClickListener() {
+        binding.addBlock.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 navController.navigate(R.id.action_blocksMenuFragment_to_newProjectFragment);
             }
+        });
+
+        /*binding.calendarButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id);
+            }
         });*/
+
+        binding.returnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_blocksMenuFragment_to_loginFragment);
+            }
+        });
 
         BlocksAdapter blocksAdapter = new BlocksAdapter();
 

@@ -14,6 +14,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.geta.R;
@@ -55,15 +56,46 @@ public class BlockFragment extends Fragment {
         TaskListViewModel taskListViewModel = new ViewModelProvider(requireActivity()).get(TaskListViewModel.class);
         navController = Navigation.findNavController(view);
 
-        /*binding.addBlock.setOnClickListener(new View.OnClickListener() {
+        binding.addBlock.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.action_blocksMenuFragment_to_newProjectFragment);
+                navController.navigate(R.id.action_blockFragment_to_newListFragment);
+            }
+        });
+
+        /*binding.calendarButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id);
             }
         });*/
+
+        binding.returnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_blockFragment_to_blocksMenuFragment);
+            }
+        });
+
         TaskListAdapter taskListAdapter = new TaskListAdapter();
 
         binding.taskListRecyclerView.setAdapter(taskListAdapter);
+
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(
+                ItemTouchHelper.UP | ItemTouchHelper.DOWN,
+                ItemTouchHelper.RIGHT  | ItemTouchHelper.LEFT) {
+
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                return true;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+
+            }
+
+        }).attachToRecyclerView(binding.taskListRecyclerView);
 
         taskListViewModel.obtener().observe(getViewLifecycleOwner(), new Observer<List<TaskList>>() {
             @Override

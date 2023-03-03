@@ -27,4 +27,6 @@
     <string name="descripcion">Descripción</string>
     <string name="loremIpsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam et massa vel neque interdum ultrices.Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vivamus pretium vel nisi eget vulputate. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus tincidunt diam sed metus pellentesque.</string>
     <string name="usuarios_asignados">Usuarios asignados</string>
+    <string name="almacenamiento">¿Permitir a GeTa acceder a tu almacenamiento?</string>
+    <string name="no_volver_a_preguntar">No volver a preguntar</string>
 </resources>

@@ -1,25 +1,23 @@
 package com.example.geta;
 
-import android.graphics.Color;
-import android.media.metrics.Event;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-import java.util.Locale;
+import com.example.geta.databinding.FragmentNewTaskBinding;
 
 public class NewTaskFragment extends Fragment {
+
+    private FragmentNewTaskBinding binding;
+    private NavController navController;
 
     public NewTaskFragment() {
         // Required empty public constructor
@@ -41,6 +39,23 @@ public class NewTaskFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        navController = Navigation.findNavController(view);
+
+        binding.addBlock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_newTaskFragment_to_taskDescriptionFragment);
+            }
+        });
+
+        binding.returnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_newTaskFragment_to_blockFragment);
+            }
+        });
+
 
     }
 }

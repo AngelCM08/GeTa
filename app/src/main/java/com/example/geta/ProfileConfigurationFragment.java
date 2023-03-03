@@ -44,7 +44,7 @@ public class ProfileConfigurationFragment extends Fragment {
         binding.saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //navController.navigate();
+                navController.navigate(R.id.action_profileConfigurationFragment_to_blocksMenuFragment);
             }
         });
 

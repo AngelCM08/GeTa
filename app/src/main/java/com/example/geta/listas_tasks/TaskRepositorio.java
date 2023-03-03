@@ -15,6 +15,10 @@ public class TaskRepositorio {
         tasks.add(new Task("Tarea 2", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam et massa vel neque interdum ultrices.Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;"));
         tasks.add(new Task("Tarea 3", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam et massa vel neque interdum ultrices.Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;"));
         tasks.add(new Task("Tarea 4", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam et massa vel neque interdum ultrices.Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;"));
+        tasks.add(new Task("Tarea 1", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam et massa vel neque interdum ultrices.Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;"));
+        tasks.add(new Task("Tarea 2", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam et massa vel neque interdum ultrices.Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;"));
+        tasks.add(new Task("Tarea 3", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam et massa vel neque interdum ultrices.Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;"));
+        tasks.add(new Task("Tarea 4", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam et massa vel neque interdum ultrices.Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;"));
     }
 
     public List<Task> obtener() {

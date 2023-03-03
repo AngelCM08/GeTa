@@ -4,11 +4,18 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_blocks_menu.xml" value="0.35625" />
+        <entry key="app/src/main/res/layout/fragment_block.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_blocks_menu.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_blocks_menus.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.35625" />
+        <entry key="app/src/main/res/layout/fragment_new_list.xml" value="0.10648148148148148" />
+        <entry key="app/src/main/res/layout/fragment_new_project.xml" value="0.10648148148148148" />
+        <entry key="app/src/main/res/layout/fragment_new_task.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/fragment_register.xml" value="0.35625" />
+        <entry key="app/src/main/res/layout/fragment_task_description.xml" value="0.25" />
         <entry key="app/src/main/res/layout/viewholder_block.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/viewholder_block_menu.xml" value="0.35625" />
+        <entry key="app/src/main/res/layout/viewholder_tasklist.xml" value="0.35625" />
       </map>
     </option>
   </component>

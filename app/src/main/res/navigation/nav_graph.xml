@@ -50,7 +50,11 @@
         android:id="@+id/newProjectFragment"
         android:name="com.example.geta.NewProjectFragment"
         android:label="fragment_new_project"
-        tools:layout="@layout/fragment_new_project" />
+        tools:layout="@layout/fragment_new_project" >
+        <action
+            android:id="@+id/action_newProjectFragment_to_newListFragment"
+            app:destination="@id/newListFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileConfigurationFragment"
         android:name="com.example.geta.ProfileConfigurationFragment"
@@ -64,12 +68,20 @@
         android:id="@+id/newListFragment"
         android:name="com.example.geta.NewListFragment"
         android:label="fragment_new_list"
-        tools:layout="@layout/fragment_new_list" />
+        tools:layout="@layout/fragment_new_list" >
+        <action
+            android:id="@+id/action_newListFragment_to_blockFragment"
+            app:destination="@id/blockFragment" />
+    </fragment>
     <fragment
         android:id="@+id/newTaskFragment"
         android:name="com.example.geta.NewTaskFragment"
         android:label="fragment_new_task"
-        tools:layout="@layout/fragment_new_task" />
+        tools:layout="@layout/fragment_new_task" >
+        <action
+            android:id="@+id/action_newTaskFragment_to_blockFragment"
+            app:destination="@id/blockFragment" />
+    </fragment>
     <fragment
         android:id="@+id/blockFragment"
         android:name="com.example.geta.listas_tasks.BlockFragment"
@@ -104,5 +116,9 @@
         android:id="@+id/taskDescriptionFragment"
         android:name="com.example.geta.TaskDescriptionFragment"
         android:label="fragment_task_description"
-        tools:layout="@layout/fragment_task_description" />
+        tools:layout="@layout/fragment_task_description" >
+        <action
+            android:id="@+id/action_taskDescriptionFragment_to_blockFragment"
+            app:destination="@id/blockFragment" />
+    </fragment>
 </navigation>

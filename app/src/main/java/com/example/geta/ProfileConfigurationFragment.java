@@ -48,7 +48,7 @@ public class ProfileConfigurationFragment extends Fragment {
             }
         });
 
-        binding.cancelButton.setOnClickListener(new View.OnClickListener() {
+        binding.returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 navController.navigate(R.id.action_profileConfigurationFragment_to_profileFragment);

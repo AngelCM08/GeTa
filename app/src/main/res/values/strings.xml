@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">GeTa</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="registrarme">Registrarme</string>
     <string name="acceder">Acceder</string>
@@ -20,4 +19,12 @@
     <string name="nueva_tarea">Nueva Tarea</string>
     <string name="lista">Lista</string>
     <string name="nombre_proyecto">Nombre Proyecto</string>
+    <string name="siguiente">Siguiente</string>
+    <string name="color">Color</string>
+    <string name="icono">Icono</string>
+    <string name="salir">Salir</string>
+    <string name="nombre_del_proyecto">Nombre del proyecto</string>
+    <string name="descripcion">Descripción</string>
+    <string name="loremIpsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam et massa vel neque interdum ultrices.Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vivamus pretium vel nisi eget vulputate. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus tincidunt diam sed metus pellentesque.</string>
+    <string name="usuarios_asignados">Usuarios asignados</string>
 </resources>

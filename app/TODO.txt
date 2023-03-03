@@ -1,1 +1,13 @@
 // TODO Crear un modal para cuando se modifiquen (Hacer clic en el botón guardar) los datos del perfil.
+// TODO En fragment_new_project encerclar el color al hacer clic en el.
+// TODO POSIBLE LIBRERIA un select de Usuarios para asignar dentro del Proyecto. En fragment_new_project.
+// TODO Montar todos los buttons_layout del resto de fragments (
+        TODO newListFragment,
+        TODO blockFragment,
+        TODO newTaskFragment,
+        TODO taskDescription
+    )
+// TODO Añadir movimiento que simula ordenar las Tasks dentro del blockFragment.
+// TODO Implementar el calendario(?)
+// TODO Pantalla de carga(?)
+// TODO Colar en algún lado el MAPS(?)

@@ -114,7 +114,7 @@
 
                 <!-- Botón para cancelar -->
                 <Button
-                    android:id="@+id/cancel_button"
+                    android:id="@+id/return_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:elevation="8dp"
@@ -124,7 +124,7 @@
                     android:paddingTop="14dp"
                     android:paddingEnd="25dp"
                     android:paddingBottom="14dp"
-                    android:text="@string/cancelar"
+                    android:text="@string/salir"
                     android:textColor="@color/dark_blue"
                     android:textSize="20sp" />
 

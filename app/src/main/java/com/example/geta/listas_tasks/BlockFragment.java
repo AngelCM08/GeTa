@@ -91,9 +91,7 @@ public class BlockFragment extends Fragment {
             }
 
             @Override
-            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-
-            }
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {}
 
         }).attachToRecyclerView(binding.taskListRecyclerView);
 
@@ -123,6 +121,20 @@ public class BlockFragment extends Fragment {
             // Crea y establece el adaptador para el RecyclerView hijo
             TaskAdapter taskAdapter = new TaskAdapter();
             holder.binding.TasksRecyclerView.setAdapter(taskAdapter);
+
+            new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(
+                    ItemTouchHelper.UP | ItemTouchHelper.DOWN,
+                    ItemTouchHelper.RIGHT  | ItemTouchHelper.LEFT) {
+
+                @Override
+                public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                    return true;
+                }
+
+                @Override
+                public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {}
+
+            }).attachToRecyclerView(holder.binding.TasksRecyclerView);
 
             taskViewModel.obtener().observe(getViewLifecycleOwner(), new Observer<List<Task>>() {
                 @Override
@@ -178,6 +190,11 @@ public class BlockFragment extends Fragment {
             holder.binding.title.setText(task.nombre);
             holder.binding.element.setBackgroundColor(getResources().getColor(block_color));
             holder.binding.cross.setBackgroundColor(getResources().getColor(block_color));
+
+            holder.binding.cross.setOnClickListener(v -> {
+                taskList.remove(position);
+                notifyDataSetChanged();
+            });
         }
 
         @Override
@@ -190,7 +207,7 @@ public class BlockFragment extends Fragment {
             notifyDataSetChanged();
         }
 
-        public Task obtenerBlock(int posicion){
+        public Task obtenerTask(int posicion){
             return taskList.get(posicion);
         }
     }

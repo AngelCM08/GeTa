@@ -112,7 +112,7 @@
         android:id="@+id/return_button"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginEnd="200dp"
+        android:layout_marginEnd="230dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/add_block"
         app:layout_constraintStart_toStartOf="parent"

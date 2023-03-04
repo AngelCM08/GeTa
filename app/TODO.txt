@@ -12,3 +12,4 @@
 // TODO Pantalla de carga(?)
 // TODO Colar en algún lado el MAPS(?)
 // TODO He olvidado la contraseña en Login
+// TODO Editar usuario, añadir la vaina esta del almacenamiento

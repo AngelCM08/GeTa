@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.animation.OvershootInterpolator;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 
@@ -28,22 +29,15 @@ public class FrontPageFragment extends AppCompatActivity {
 
         logo = findViewById(R.id.logo);
 
-        Animation animacion = new TranslateAnimation(0, 0, 0, -150);
-        animacion.setDuration(1000);
-
-        animacion.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {}
-            @Override
-            public void onAnimationEnd(Animation animation) {
-                logo.clearAnimation(); // Limpia la animación para que la imagen no vuelva a su posición anterior
-                logo.setTranslationY(30); // Cambia la posición de la imagen 200 píxeles hacia abajo
-            }
-            @Override
-            public void onAnimationRepeat(Animation animation) {}
-        });
-
-        logo.startAnimation(animacion);
+        logo.setScaleX(0.1f);
+        logo.setScaleY(0.1f);
+        logo.animate()
+                .scaleX(1f)
+                .scaleY(1f)
+                .rotation(0f)
+                .setDuration(1500)
+                .setInterpolator(new OvershootInterpolator())
+                .start();
 
         new Handler().postDelayed(() -> {
             Intent intent = new Intent(this, MainActivity.class);

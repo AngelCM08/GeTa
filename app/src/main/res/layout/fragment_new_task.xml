@@ -103,8 +103,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/calendar"
-                    android:layout_marginBottom="20dp" />
+                    android:src="@drawable/calendar" />
             </LinearLayout>
         </com.google.android.flexbox.FlexboxLayout>
     </ScrollView>

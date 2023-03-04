@@ -1,12 +1,9 @@
 package com.example.geta.listas_tasks;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -16,9 +13,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.geta.R;
-import com.example.geta.blocks_menu.Block;
 import com.example.geta.databinding.FragmentBlockBinding;
 import com.example.geta.databinding.ViewholderTaskMenuBinding;
 import com.example.geta.databinding.ViewholderTasklistBinding;
@@ -27,8 +22,9 @@ import java.util.List;
 
 public class BlockFragment extends Fragment {
     private FragmentBlockBinding binding;
-    private int block_color;
     private NavController navController;
+    private int block_color;
+    private boolean recharged;
 
     public BlockFragment() {
         // Required empty public constructor
@@ -42,11 +38,23 @@ public class BlockFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        binding = FragmentBlockBinding.inflate(inflater, container, false);
+
         if (getArguments() != null) {
             block_color = getArguments().getInt("color");
-            // Usa el valor de "color" como sea necesario
+            recharged = getArguments().getBoolean("recharged");
         }
-        return (binding = FragmentBlockBinding.inflate(inflater, container, false)).getRoot();
+
+        /*if(recharged){
+            binding.scrollView.getChildAt(0).post(new Runnable() {
+                @Override
+                public void run() {
+                    binding.scrollView.smoothScrollTo(binding.scrollView.getChildAt(0).getWidth(), 0);
+                }
+            });
+        }*/
+
+        return (binding).getRoot();
     }
 
     @Override
@@ -55,11 +63,17 @@ public class BlockFragment extends Fragment {
 
         TaskListViewModel taskListViewModel = new ViewModelProvider(requireActivity()).get(TaskListViewModel.class);
         navController = Navigation.findNavController(view);
+        TaskListAdapter taskListAdapter = new TaskListAdapter();
 
         binding.addBlock.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.action_blockFragment_to_newListFragment);
+                List<Task> taskList = null;
+                taskListAdapter.taskListList.add(new TaskList("Lista vacía", taskList));
+                Bundle bundle = new Bundle();
+                bundle.putInt("color", block_color);
+                bundle.putBoolean("recharged", true);
+                navController.navigate(R.id.action_blockFragment_self, bundle);
             }
         });
 
@@ -76,8 +90,6 @@ public class BlockFragment extends Fragment {
                 navController.navigate(R.id.action_blockFragment_to_blocksMenuFragment);
             }
         });
-
-        TaskListAdapter taskListAdapter = new TaskListAdapter();
 
         binding.taskListRecyclerView.setAdapter(taskListAdapter);
 
@@ -117,6 +129,14 @@ public class BlockFragment extends Fragment {
             TaskList taskList = taskListList.get(position);
             TaskViewModel taskViewModel = new ViewModelProvider(requireActivity()).get(TaskViewModel.class);
             holder.binding.listName.setText(taskList.nombre);
+            holder.binding.addNewTask.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("color", block_color);
+                    navController.navigate(R.id.action_blockFragment_to_newTaskFragment, bundle);
+                }
+            });
 
             // Crea y establece el adaptador para el RecyclerView hijo
             TaskAdapter taskAdapter = new TaskAdapter();
@@ -167,12 +187,6 @@ public class BlockFragment extends Fragment {
             this.binding = binding;
         }
     }
-
-
-
-
-
-
 
     public class TaskAdapter extends RecyclerView.Adapter<ViewholderTask> {
         List<Task> taskList;

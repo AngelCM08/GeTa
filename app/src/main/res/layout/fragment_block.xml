@@ -45,6 +45,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/calendar_button">
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/taskListRecyclerView"
             android:layout_width="match_parent"
@@ -53,6 +57,7 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:orientation="horizontal"
             tools:listitem="@layout/viewholder_tasklist" />
+        </LinearLayout>
     </ScrollView>
 
     <FrameLayout

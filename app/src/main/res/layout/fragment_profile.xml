@@ -58,47 +58,44 @@
                     android:padding="15dp"/>
             </androidx.cardview.widget.CardView>
 
-            <!-- Input para el nombre del usuario -->
-            <EditText
+            <TextView
                 android:id="@+id/nombre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:background="@drawable/shape_input"
                 android:drawablePadding="10dp"
-                android:hint="@string/nombre"
-                android:inputType="textEmailAddress"
+                android:text="@string/ngel_castro_merino"
                 android:padding="15dp"
                 android:textColor="@color/gris_oscuro"
-                android:textColorHint="@color/gris_oscuro" />
+                android:textColorHint="@color/gris_oscuro"
+                android:textSize="18sp" />
 
-            <!-- Input para el login del usuario -->
-            <EditText
+            <TextView
                 android:id="@+id/login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:background="@drawable/shape_input"
                 android:drawablePadding="10dp"
-                android:hint="@string/login"
-                android:inputType="textEmailAddress"
+                android:text="@string/angelcm08"
                 android:padding="15dp"
                 android:textColor="@color/gris_oscuro"
-                android:textColorHint="@color/gris_oscuro" />
+                android:textColorHint="@color/gris_oscuro"
+                android:textSize="18sp" />
 
-            <!-- Input para el E-mail del usuario -->
-            <EditText
+            <TextView
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:background="@drawable/shape_input"
                 android:drawablePadding="10dp"
-                android:hint="@string/e_mail"
-                android:inputType="textEmailAddress"
+                android:text="@string/angelcm_elpuig_xeill_cat"
                 android:padding="15dp"
                 android:textColor="@color/gris_oscuro"
-                android:textColorHint="@color/gris_oscuro" />
+                android:textColorHint="@color/gris_oscuro"
+                android:textSize="18sp"/>
 
             <!-- Botones de Acceder y Registrarme en una fila -->
             <com.google.android.flexbox.FlexboxLayout

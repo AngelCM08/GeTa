@@ -1,123 +1,199 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#48799C"
-    android:gravity="center"
-    android:orientation="vertical">
-
-    <com.google.android.flexbox.FlexboxLayout
-        android:id="@+id/flexboxLayout"
+    android:layout_height="match_parent">
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="0dp"
-        android:layout_margin="15dp"
+        android:layout_height="match_parent"
         android:background="#48799C"
-        app:alignContent="center"
-        app:alignItems="center"
-        app:flexWrap="wrap"
-        app:justifyContent="center">
+        android:gravity="center"
+        android:orientation="vertical">
 
-        <!-- Imagen del logo de la app en la parte superior -->
-        <ImageView
-            android:id="@+id/logo_image_view"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/logo_principal" />
-
-        <!-- Input para el correo electrónico del usuario -->
-        <EditText
-            android:id="@+id/input_email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/shape_input"
-            android:drawableStart="@drawable/person"
-            android:drawablePadding="10dp"
-            android:hint="@string/login_email"
-            android:inputType="textEmailAddress"
-            android:padding="15dp"
-            android:textColor="@color/gris_oscuro"
-            android:textColorHint="@color/gris_oscuro"
-            android:textSize="20sp" />
-
-        <!-- Input para la contraseña del usuario -->
-        <EditText
-            android:id="@+id/input_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/shape_input"
-            android:drawableStart="@drawable/lock"
-            android:drawablePadding="10dp"
-            android:hint="@string/contrase_a"
-            android:inputType="textPassword"
-            android:padding="15dp"
-            android:textColor="@color/gris_oscuro"
-            android:textColorHint="@color/gris_oscuro"
-            android:textSize="20sp" />
-
-        <!-- Texto de "He olvidado mi contraseña" -->
-        <TextView
-            android:id="@+id/forgot_password_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:paddingBottom="20dp"
-            android:text="@string/he_olvidado_la_contrase_a"
-            android:textColor="@color/dark_blue"
-            android:textSize="18sp" />
-
-        <!-- Botones de Acceder y Registrarme en una fila -->
         <com.google.android.flexbox.FlexboxLayout
+            android:id="@+id/flexboxLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="0dp"
+            android:layout_margin="15dp"
+            android:background="#48799C"
             app:alignContent="center"
             app:alignItems="center"
-            app:flexDirection="row"
-            app:justifyContent="space_between">
+            app:flexWrap="wrap"
+            app:justifyContent="center">
 
-            <LinearLayout
+            <!-- Imagen del logo de la app en la parte superior -->
+            <ImageView
+                android:id="@+id/logo_image_view"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/logo_principal" />
+
+            <!-- Input para el correo electrónico del usuario -->
+            <EditText
+                android:id="@+id/input_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="25dp"
-                android:orientation="vertical">
+                android:layout_margin="10dp"
+                android:background="@drawable/shape_input"
+                android:drawableStart="@drawable/person"
+                android:drawablePadding="10dp"
+                android:hint="@string/login_email"
+                android:inputType="textEmailAddress"
+                android:padding="15dp"
+                android:textColor="@color/gris_oscuro"
+                android:textColorHint="@color/gris_oscuro"
+                android:textSize="20sp" />
 
-                <!-- Botón para iniciar sesión -->
-                <Button
-                    android:id="@+id/login_button"
-                    android:layout_width="wrap_content"
+            <!-- Input para la contraseña del usuario -->
+            <EditText
+                android:id="@+id/input_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/shape_input"
+                android:drawableStart="@drawable/lock"
+                android:drawablePadding="10dp"
+                android:hint="@string/contrase_a"
+                android:inputType="textPassword"
+                android:padding="15dp"
+                android:textColor="@color/gris_oscuro"
+                android:textColorHint="@color/gris_oscuro"
+                android:textSize="20sp" />
+
+            <!-- Texto de "He olvidado mi contraseña" -->
+            <TextView
+                android:id="@+id/forgot_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:paddingBottom="20dp"
+                android:text="@string/he_olvidado_la_contrase_a"
+                android:textColor="@color/dark_blue"
+                android:textSize="18sp" />
+
+            <!-- Botones de Acceder y Registrarme en una fila -->
+            <com.google.android.flexbox.FlexboxLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:alignContent="center"
+                app:alignItems="center"
+                app:flexDirection="row"
+                app:justifyContent="space_between">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:background="@drawable/shape_button_dark"
-                    android:paddingStart="25dp"
-                    android:paddingTop="18dp"
-                    android:paddingEnd="25dp"
-                    android:paddingBottom="20dp"
-                    android:text="@string/acceder"
-                    android:textColor="@color/beix"
-                    android:textSize="22sp" />
+                    android:layout_marginBottom="25dp"
+                    android:orientation="vertical">
 
-                <!-- Botón para registrarse -->
-                <Button
-                    android:id="@+id/register_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="50dp"
-                    android:background="@drawable/shape_button_light"
-                    android:paddingStart="25dp"
-                    android:paddingTop="18dp"
-                    android:paddingEnd="25dp"
-                    android:paddingBottom="20dp"
-                    android:text="@string/registrarme"
-                    android:textColor="@color/dark_blue"
-                    android:textSize="22sp" />
+                    <!-- Botón para iniciar sesión -->
+                    <Button
+                        android:id="@+id/login_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/shape_button_dark"
+                        android:paddingStart="25dp"
+                        android:paddingTop="18dp"
+                        android:paddingEnd="25dp"
+                        android:paddingBottom="20dp"
+                        android:text="@string/acceder"
+                        android:textColor="@color/beix"
+                        android:textSize="22sp" />
 
-            </LinearLayout>
+                    <!-- Botón para registrarse -->
+                    <Button
+                        android:id="@+id/register_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="50dp"
+                        android:background="@drawable/shape_button_light"
+                        android:paddingStart="25dp"
+                        android:paddingTop="18dp"
+                        android:paddingEnd="25dp"
+                        android:paddingBottom="20dp"
+                        android:text="@string/registrarme"
+                        android:textColor="@color/dark_blue"
+                        android:textSize="22sp" />
+
+                </LinearLayout>
+            </com.google.android.flexbox.FlexboxLayout>
         </com.google.android.flexbox.FlexboxLayout>
-    </com.google.android.flexbox.FlexboxLayout>
-</ScrollView>
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/restore_passwd"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#77FFFFFF"
+        android:visibility="gone">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/light_blue"
+                android:padding="20dp">
+
+                <EditText
+                    android:id="@+id/restore_pass_email"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_input"
+                    android:drawableStart="@drawable/person"
+                    android:drawablePadding="5dp"
+                    android:hint="@string/e_mail_short"
+                    android:inputType="textEmailAddress"
+                    android:padding="5dp"
+                    android:textColor="@color/gris_oscuro"
+                    android:textColorHint="@color/gris_oscuro"
+                    android:textSize="20sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/restore_pass_email"/>
+
+                <TextView
+                    android:id="@+id/mensaje"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/enviaremos_un_mail_de_recuperaci_n_de_contrase_a"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textAlignment="center"
+                    app:layout_constraintTop_toBottomOf="@id/restore_pass_email"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/aceptar"/>
+
+                <Button
+                    android:id="@+id/aceptar"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_button_dark"
+                    android:textColor="@color/beix"
+                    android:text="@string/aceptar"
+                    android:textSize="20sp"
+                    app:layout_constraintTop_toBottomOf="@id/mensaje"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

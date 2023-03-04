@@ -30,4 +30,11 @@
     <string name="almacenamiento">¿Permitir a GeTa acceder a tu almacenamiento?</string>
     <string name="no_volver_a_preguntar">No volver a preguntar</string>
     <string name="a_adir_tarea">Añadir Tarea</string>
+    <string name="crear_proyecto">Crear Proyecto</string>
+    <string name="enviaremos_un_mail_de_recuperaci_n_de_contrase_a">Enviaremos un mail de recuperación de contraseña</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="e_mail_short">E-mail</string>
+    <string name="angelcm_elpuig_xeill_cat">angelcm@elpuig.xeill.cat</string>
+    <string name="angelcm08">angelcm08</string>
+    <string name="ngel_castro_merino">Ángel Castro Merino</string>
 </resources>

@@ -43,7 +43,7 @@ public class NewProjectFragment extends Fragment {
         binding.nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.action_newProjectFragment_to_newListFragment);
+                navController.navigate(R.id.action_newProjectFragment_to_blocksMenuFragment);
             }
         });
 

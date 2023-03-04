@@ -12,12 +12,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.geta.databinding.FragmentBlockBinding;
 import com.example.geta.databinding.FragmentNewTaskBinding;
 
 public class NewTaskFragment extends Fragment {
 
     private FragmentNewTaskBinding binding;
     private NavController navController;
+    private int block_color;
 
     public NewTaskFragment() {
         // Required empty public constructor
@@ -32,8 +34,10 @@ public class NewTaskFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_new_task, container, false);
+        if (getArguments() != null) {
+            block_color = getArguments().getInt("color");
+        }
+        return (binding = FragmentNewTaskBinding.inflate(inflater, container, false)).getRoot();
     }
 
     @Override
@@ -52,7 +56,9 @@ public class NewTaskFragment extends Fragment {
         binding.returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.action_newTaskFragment_to_blockFragment);
+                Bundle bundle = new Bundle();
+                bundle.putInt("color", block_color);
+                navController.navigate(R.id.action_newTaskFragment_to_blockFragment, bundle);
             }
         });
 

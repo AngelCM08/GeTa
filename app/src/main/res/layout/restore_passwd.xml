@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/restore_passwd"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3CFFFFFF">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/light_blue"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="5dp">
+
+        <EditText
+            android:id="@+id/input_email"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_input"
+            android:drawableStart="@drawable/person"
+            android:drawablePadding="5dp"
+            android:hint="@string/e_mail_short"
+            android:inputType="textEmailAddress"
+            android:padding="5dp"
+            android:textColor="@color/gris_oscuro"
+            android:textColorHint="@color/gris_oscuro"
+            android:textSize="20sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/input_email"/>
+
+        <TextView
+            android:id="@+id/mensaje"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/enviaremos_un_mail_de_recuperaci_n_de_contrase_a"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textAlignment="center"
+            app:layout_constraintTop_toBottomOf="@id/input_email"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/aceptar"/>
+
+        <Button
+            android:id="@+id/aceptar"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_button_dark"
+            android:textColor="@color/beix"
+            android:text="@string/aceptar"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/mensaje"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

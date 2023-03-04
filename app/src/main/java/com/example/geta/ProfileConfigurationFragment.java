@@ -54,6 +54,36 @@ public class ProfileConfigurationFragment extends Fragment {
                 navController.navigate(R.id.action_profileConfigurationFragment_to_profileFragment);
             }
         });
+
+        binding.userImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.permitAccess.setVisibility(View.VISIBLE);
+            }
+        });
+
+        binding.denegar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.permitAccess.setVisibility(View.INVISIBLE);
+            }
+        });
+
+        binding.permitir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.permitAccess.setVisibility(View.INVISIBLE);
+                binding.userImage.setImageResource(R.drawable.user);
+                binding.userImage.setPadding(0,0,0,0);
+            }
+        });
+
+        binding.checkbox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.checkbox.setChecked(binding.checkbox.isChecked());
+            }
+        });
     }
 
 }

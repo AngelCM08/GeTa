@@ -54,6 +54,21 @@ public class LoginFragment extends Fragment {
                 navController.navigate(R.id.action_loginFragment_to_registerFragment);
             }
         });
+
+        binding.forgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.restorePasswd.setVisibility(View.VISIBLE);
+            }
+        });
+
+        binding.aceptar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.restorePasswd.setVisibility(View.INVISIBLE);
+            }
+        });
+
     }
 
 }

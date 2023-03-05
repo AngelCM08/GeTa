@@ -94,7 +94,6 @@ public class NewTaskFragment extends Fragment {
         setCalendarViewAppearance(view);
     }
 
-
     private void setCalendarViewAppearance(@NonNull View view) {
         SimpleDateFormat dateFormatForMonth = new SimpleDateFormat("MMM - yyyy", new Locale("es", "ES"));
 
@@ -104,7 +103,7 @@ public class NewTaskFragment extends Fragment {
             @Override
             public void onDayClick(Date dateClicked) {
                 List<Event> events = binding.compactcalendarView.getEvents(dateClicked);
-                binding.compactcalendarView.addEvent(new Event(Color.BLUE,dateClicked.getTime()));
+                binding.compactcalendarView.addEvent(new Event(Color.rgb(72,121,156),dateClicked.getTime()));
                 if (events.size() > 0) {
                     Log.d(TAG, "Day was clicked: " + dateClicked + " with events " + events);
                 }
@@ -117,9 +116,5 @@ public class NewTaskFragment extends Fragment {
                 Log.d(TAG, "Month was scrolled to: " + firstDayOfNewMonth);
             }
         });
-
-
-
-
     }
 }

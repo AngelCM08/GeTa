@@ -107,7 +107,7 @@
                 <!--  Calendar-->
                 <LinearLayout
                     android:id="@+id/linearcalendar_view"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="15dp"
@@ -143,24 +143,9 @@
                         app:compactCalendarCurrentDayBackgroundColor="@color/gris_claro"
                         app:compactCalendarCurrentSelectedDayBackgroundColor="@color/light_blue"
                         app:compactCalendarMultiEventIndicatorColor="@color/blue_main"
-                        app:compactCalendarEventIndicatorStyle=""
                         app:compactCalendarTextColor="@color/black"
                         app:compactCalendarTextSize="12sp" />
-
-                    <!--        <CalendarView-->
-                    <!--            android:id="@+id/calendarView"-->
-                    <!--            android:layout_width="300dp"-->
-                    <!--            android:layout_height="wrap_content"-->
-                    <!--            android:layout_marginTop="15dp"-->
-                    <!--            android:background="@drawable/border_radius"-->
-                    <!--            android:dateTextAppearance="@style/CalenderViewDateCustomText"-->
-                    <!--            android:maxDate="12/31/2023"-->
-                    <!--            android:minDate="12/01/2022"-->
-                    <!--            android:theme="@style/CalenderViewCustom"-->
-                    <!--            android:weekDayTextAppearance="@style/CalenderViewWeekCustomText"-->
-
                 </LinearLayout>
-
             </LinearLayout>
         </com.google.android.flexbox.FlexboxLayout>
     </ScrollView>

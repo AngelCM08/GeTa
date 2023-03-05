@@ -1,6 +1,10 @@
 package com.example.geta.listas_tasks;
 
+import static android.content.ContentValues.TAG;
+
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,8 +21,13 @@ import com.example.geta.R;
 import com.example.geta.databinding.FragmentBlockBinding;
 import com.example.geta.databinding.ViewholderTaskMenuBinding;
 import com.example.geta.databinding.ViewholderTasklistBinding;
+import com.github.sundeepk.compactcalendarview.CompactCalendarView;
+import com.github.sundeepk.compactcalendarview.domain.Event;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class BlockFragment extends Fragment {
     private FragmentBlockBinding binding;
@@ -77,12 +86,19 @@ public class BlockFragment extends Fragment {
             }
         });
 
-        /*binding.calendarButton.setOnClickListener(new View.OnClickListener() {
+        binding.calendarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id);
+                binding.compactCalendar.setVisibility(View.VISIBLE);
             }
-        });*/
+        });
+
+        binding.compactCalendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.compactCalendar.setVisibility(View.INVISIBLE);
+            }
+        });
 
         binding.returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,6 +129,8 @@ public class BlockFragment extends Fragment {
                 taskListAdapter.establecerLista(taskListList);
             }
         });
+
+        setCalendarViewAppearance(view);
     }
 
     public class TaskListAdapter extends RecyclerView.Adapter<ViewholderTasklist> {
@@ -205,6 +223,12 @@ public class BlockFragment extends Fragment {
             holder.binding.element.setBackgroundColor(getResources().getColor(block_color));
             holder.binding.cross.setBackgroundColor(getResources().getColor(block_color));
 
+            holder.binding.element.setOnClickListener(v -> {
+                Bundle bundle = new Bundle();
+                bundle.putInt("color", block_color);
+                navController.navigate(R.id.action_blockFragment_to_taskDescriptionFragment, bundle);
+            });
+
             holder.binding.cross.setOnClickListener(v -> {
                 taskList.remove(position);
                 notifyDataSetChanged();
@@ -233,5 +257,29 @@ public class BlockFragment extends Fragment {
             super(binding.getRoot());
             this.binding = binding;
         }
+    }
+
+    private void setCalendarViewAppearance(@NonNull View view) {
+        SimpleDateFormat dateFormatForMonth = new SimpleDateFormat("MMM - yyyy", new Locale("es", "ES"));
+
+        binding.compactcalendarView.setUseThreeLetterAbbreviation(true);
+        binding.monthText.setText(dateFormatForMonth.format(binding.compactcalendarView.getFirstDayOfCurrentMonth()));
+        binding.compactcalendarView.setListener(new CompactCalendarView.CompactCalendarViewListener() {
+            @Override
+            public void onDayClick(Date dateClicked) {
+                List<Event> events = binding.compactcalendarView.getEvents(dateClicked);
+                binding.compactcalendarView.addEvent(new Event(Color.rgb(72,121,156),dateClicked.getTime()));
+                if (events.size() > 0) {
+                    Log.d(TAG, "Day was clicked: " + dateClicked + " with events " + events);
+                }
+            }
+
+            @Override
+            public void onMonthScroll(Date firstDayOfNewMonth) {
+                binding.compactcalendarView.setCurrentDate(firstDayOfNewMonth);
+                binding.monthText.setText(dateFormatForMonth.format(firstDayOfNewMonth));
+                Log.d(TAG, "Month was scrolled to: " + firstDayOfNewMonth);
+            }
+        });
     }
 }

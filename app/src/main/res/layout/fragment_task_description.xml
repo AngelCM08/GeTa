@@ -95,12 +95,46 @@
                     android:textColorHint="@color/gris_oscuro"
                     android:textSize="20sp" />
 
-                <ImageView
-                    android:layout_width="wrap_content"
+                <!--  Calendar-->
+                <LinearLayout
+                    android:id="@+id/linearcalendar_view"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:src="@drawable/calendar" />
+                    android:layout_marginTop="15dp"
+                    android:backgroundTint="@color/beix"
+                    android:background="@drawable/shape_input"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:id="@+id/monthText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="50dp"
+                            android:paddingRight="50dp"
+                            android:textSize="20sp" />
+
+                    </LinearLayout>
+
+                    <com.github.sundeepk.compactcalendarview.CompactCalendarView
+                        android:id="@+id/compactcalendar_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="200dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        app:compactCalendarBackgroundColor="@color/beix"
+                        app:compactCalendarCurrentDayBackgroundColor="@color/gris_claro"
+                        app:compactCalendarCurrentSelectedDayBackgroundColor="@color/light_blue"
+                        app:compactCalendarMultiEventIndicatorColor="@color/blue_main"
+                        app:compactCalendarTextColor="@color/black"
+                        app:compactCalendarTextSize="12sp" />
+                </LinearLayout>
             </LinearLayout>
         </com.google.android.flexbox.FlexboxLayout>
     </ScrollView>

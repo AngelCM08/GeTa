@@ -1,5 +1,8 @@
 package com.example.geta.blocks_menu;
 
+import static android.content.ContentValues.TAG;
+
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,6 +15,7 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,8 +23,13 @@ import android.view.ViewGroup;
 import com.example.geta.R;
 import com.example.geta.databinding.FragmentBlocksMenuBinding;
 import com.example.geta.databinding.ViewholderBlockMenuBinding;
+import com.github.sundeepk.compactcalendarview.CompactCalendarView;
+import com.github.sundeepk.compactcalendarview.domain.Event;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class BlocksMenuFragment extends Fragment {
 
@@ -28,6 +37,7 @@ public class BlocksMenuFragment extends Fragment {
     private BlocksViewModel blocksViewModel;
     private NavController navController;
     private int posicionQueEliminar;
+    private boolean activated = false;
 
     public BlocksMenuFragment() {
         // Required empty public constructor
@@ -67,12 +77,19 @@ public class BlocksMenuFragment extends Fragment {
             }
         });
 
-        /*binding.calendarButton.setOnClickListener(new View.OnClickListener() {
+        binding.calendarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id);
+                binding.compactCalendar.setVisibility(View.VISIBLE);
             }
-        });*/
+        });
+
+        binding.compactCalendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.compactCalendar.setVisibility(View.INVISIBLE);
+            }
+        });
 
         binding.returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -121,6 +138,8 @@ public class BlocksMenuFragment extends Fragment {
                 blocksAdapter.establecerLista(blocks);
             }
         });
+
+        setCalendarViewAppearance(view);
     }
 
     class BlocksAdapter extends RecyclerView.Adapter<BlockMenuViewHolder> {
@@ -170,5 +189,29 @@ public class BlocksMenuFragment extends Fragment {
             super(binding.getRoot());
             this.binding = binding;
         }
+    }
+
+    private void setCalendarViewAppearance(@NonNull View view) {
+        SimpleDateFormat dateFormatForMonth = new SimpleDateFormat("MMM - yyyy", new Locale("es", "ES"));
+
+        binding.compactcalendarView.setUseThreeLetterAbbreviation(true);
+        binding.monthText.setText(dateFormatForMonth.format(binding.compactcalendarView.getFirstDayOfCurrentMonth()));
+        binding.compactcalendarView.setListener(new CompactCalendarView.CompactCalendarViewListener() {
+            @Override
+            public void onDayClick(Date dateClicked) {
+                List<Event> events = binding.compactcalendarView.getEvents(dateClicked);
+                binding.compactcalendarView.addEvent(new Event(Color.rgb(72,121,156),dateClicked.getTime()));
+                if (events.size() > 0) {
+                    Log.d(TAG, "Day was clicked: " + dateClicked + " with events " + events);
+                }
+            }
+
+            @Override
+            public void onMonthScroll(Date firstDayOfNewMonth) {
+                binding.compactcalendarView.setCurrentDate(firstDayOfNewMonth);
+                binding.monthText.setText(dateFormatForMonth.format(firstDayOfNewMonth));
+                Log.d(TAG, "Month was scrolled to: " + firstDayOfNewMonth);
+            }
+        });
     }
 }

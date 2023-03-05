@@ -147,7 +147,8 @@
         android:id="@+id/are_u_sure"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#3CFFFFFF">
+        android:background="#3CFFFFFF"
+        android:visibility="gone">
 
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"

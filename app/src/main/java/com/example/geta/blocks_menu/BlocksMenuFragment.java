@@ -91,7 +91,10 @@ public class BlocksMenuFragment extends Fragment {
         });
         binding.cancelar.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {binding.areUSure.setVisibility(View.INVISIBLE);}
+            public void onClick(View v) {
+                binding.areUSure.setVisibility(View.INVISIBLE);
+                navController.navigate(R.id.action_blocksMenuFragment_self);
+            }
         });
 
         binding.blocksMenuRecyclerView.setAdapter(blocksAdapter);

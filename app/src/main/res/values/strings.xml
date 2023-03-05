@@ -39,4 +39,5 @@
     <string name="ngel_castro_merino">Ángel Castro Merino</string>
     <string name="informaci_n_usuario">Información Usuario</string>
     <string name="seguro_que_quieres_eliminar_el_proyecto">¿Seguro que quieres eliminar el Proyecto?</string>
+    <string name="nombre_tarea">Nombre_Tarea</string>
 </resources>

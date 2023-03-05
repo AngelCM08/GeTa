@@ -45,19 +45,19 @@ public class NewTaskFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         navController = Navigation.findNavController(view);
+        Bundle bundle = new Bundle();
+        bundle.putInt("color", block_color);
 
         binding.addBlock.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.action_newTaskFragment_to_taskDescriptionFragment);
+                navController.navigate(R.id.action_newTaskFragment_to_taskDescriptionFragment, bundle);
             }
         });
 
         binding.returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bundle bundle = new Bundle();
-                bundle.putInt("color", block_color);
                 navController.navigate(R.id.action_newTaskFragment_to_blockFragment, bundle);
             }
         });

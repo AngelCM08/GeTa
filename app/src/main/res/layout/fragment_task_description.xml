@@ -20,7 +20,7 @@
             android:layout_height="match_parent"
             android:background="@color/dark_blue"
             android:padding="16dp"
-            android:text="Nombre Tarea"
+            android:text="@string/nombre_tarea"
             android:textAlignment="center"
             android:textColor="@color/beix"
             android:textSize="34sp"

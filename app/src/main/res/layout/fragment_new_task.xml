@@ -38,7 +38,6 @@
         android:paddingStart="15dp"
         android:paddingTop="0dp"
         android:paddingEnd="15dp"
-        android:paddingBottom="15dp"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,6 +54,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
                 android:orientation="vertical">
 
                 <EditText
@@ -112,7 +112,7 @@
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginEnd="5dp"
-                    android:backgroundTint="@color/white"
+                    android:backgroundTint="@color/beix"
                     android:background="@drawable/shape_input"
                     android:orientation="vertical">
 
@@ -123,28 +123,14 @@
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp">
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:contentDescription="Go Back"
-                            android:src="@drawable/add" />
-
                         <TextView
                             android:id="@+id/monthText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingLeft="50dp"
                             android:paddingRight="50dp"
-                            android:text="Hola"
                             android:textSize="20sp" />
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:contentDescription="Forwared"
-                            android:src="@drawable/add" />
                     </LinearLayout>
 
                     <com.github.sundeepk.compactcalendarview.CompactCalendarView
@@ -153,10 +139,12 @@
                         android:layout_height="200dp"
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp"
-                        app:compactCalendarCurrentDayTextColor="@color/blue_main"
-                        app:compactCalendarCurrentSelectedDayBackgroundColor="@color/blue_main"
+                        app:compactCalendarBackgroundColor="@color/beix"
+                        app:compactCalendarCurrentDayBackgroundColor="@color/gris_claro"
+                        app:compactCalendarCurrentSelectedDayBackgroundColor="@color/light_blue"
                         app:compactCalendarMultiEventIndicatorColor="@color/blue_main"
-                        app:compactCalendarTextColor="#6C6B6B"
+                        app:compactCalendarEventIndicatorStyle=""
+                        app:compactCalendarTextColor="@color/black"
                         app:compactCalendarTextSize="12sp" />
 
                     <!--        <CalendarView-->
@@ -181,7 +169,7 @@
         android:id="@+id/return_button"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginEnd="230dp"
+        android:layout_marginEnd="180dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/add_block"
         app:layout_constraintStart_toStartOf="parent"

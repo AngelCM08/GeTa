@@ -19,3 +19,5 @@
 
 // TO DO Mencionar al profe en el informe el bug de que si eliminas cosas puede petar, para borrar sin que
 pete borrar siempre el primer elemento, en la primera lista que borres puedes borrar como quieras, pero en las demás solo borrar la primera tarea para evitarlo.
+
+A tener en cuenta que en la pantalla de carga no se puede dar al botón de retroceder del móvil, no he podido solucionarlo de una manera sencilla y no puedo perder tiempo en un detalle que considero que no es importante ya que es una cuestión de Java.

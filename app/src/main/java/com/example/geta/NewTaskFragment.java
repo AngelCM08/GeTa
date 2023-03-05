@@ -105,7 +105,6 @@ public class NewTaskFragment extends Fragment {
             public void onDayClick(Date dateClicked) {
                 List<Event> events = binding.compactcalendarView.getEvents(dateClicked);
                 binding.compactcalendarView.addEvent(new Event(Color.BLUE,dateClicked.getTime()));
-//                binding.compactcalendarView.addEvent();
                 if (events.size() > 0) {
                     Log.d(TAG, "Day was clicked: " + dateClicked + " with events " + events);
                 }

@@ -7,13 +7,10 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.example.geta.databinding.FragmentNewProjectBinding;
-import com.example.geta.databinding.FragmentProfileBinding;
 
 public class NewProjectFragment extends Fragment {
     FragmentNewProjectBinding binding;

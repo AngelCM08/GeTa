@@ -144,7 +144,7 @@ public class BlocksMenuFragment extends Fragment {
                 Bundle bundle = new Bundle();
                 bundle.putInt("color", block.color);
                 blocksViewModel.seleccionar(block);
-                navController.navigate(R.id.action_blocksMenuFragment_to_blockFragment, bundle);
+                navController.navigate(R.id.action_blocksMenuFragment_to_loadingFragment, bundle);
             });
         }
 

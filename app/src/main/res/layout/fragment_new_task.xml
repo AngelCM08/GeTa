@@ -86,19 +86,30 @@
                     android:textColorHint="@color/gris_oscuro"
                     android:textSize="20sp" />
 
-                <EditText
-                    android:id="@+id/usuario_asignado"
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    app:cardCornerRadius="10dp">
+
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/spinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:background="@drawable/shape_input"
-                    android:drawablePadding="10dp"
                     android:hint="@string/usuario_asignado"
-                    android:inputType="textEmailAddress"
-                    android:padding="15dp"
-                    android:textColor="@color/gris_oscuro"
                     android:textColorHint="@color/gris_oscuro"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    app:ms_dropdown_max_height="350dp"
+                    app:ms_dropdown_height="wrap_content"
+                    app:ms_background_color="@color/beix"/>
+                </androidx.cardview.widget.CardView>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/calendar" />
 
             </LinearLayout>
         </com.google.android.flexbox.FlexboxLayout>

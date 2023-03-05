@@ -14,12 +14,22 @@ import android.view.ViewGroup;
 
 import com.example.geta.databinding.FragmentBlockBinding;
 import com.example.geta.databinding.FragmentNewTaskBinding;
+import com.google.android.material.snackbar.Snackbar;
+import com.jaredrummler.materialspinner.MaterialSpinner;
 
 public class NewTaskFragment extends Fragment {
 
     private FragmentNewTaskBinding binding;
     private NavController navController;
     private int block_color;
+
+    private static final String[] USERS_TO_ASIGN = {
+            "Ángel Castro Merino",
+            "Joel López Acosta",
+            "Tarik Aabouch Azougarth",
+            "Xiaojan Zhen",
+            "Daniel Martínez Cruz"
+    };
 
     public NewTaskFragment() {
         // Required empty public constructor
@@ -28,7 +38,6 @@ public class NewTaskFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -37,6 +46,7 @@ public class NewTaskFragment extends Fragment {
         if (getArguments() != null) {
             block_color = getArguments().getInt("color");
         }
+
         return (binding = FragmentNewTaskBinding.inflate(inflater, container, false)).getRoot();
     }
 
@@ -62,6 +72,13 @@ public class NewTaskFragment extends Fragment {
             }
         });
 
+        MaterialSpinner spinner = view.findViewById(R.id.spinner);
+        spinner.setItems(USERS_TO_ASIGN);
+        spinner.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<String>() {
+            @Override public void onItemSelected(MaterialSpinner view, int position, long id, String item) {
+                Snackbar.make(view, "Usuario " + item + " asignado!", Snackbar.LENGTH_LONG).show();
+            }
+        });
 
     }
 }

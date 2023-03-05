@@ -12,9 +12,8 @@
 // TO DO Al Crear una lista nueva te desplaza a la derecha del todoo de la pantalla y se pone visible un nuevo bloque sin tareas nombrado Lista vacía.
 // TO DO Mensajito cuando se elimine un proyecto.
 
-// TODO Implementar el calendario(?)
-// TODO Pantalla de carga(?)
-// TODO Colar en algún lado el MAPS(?)
+// TO DO Implementar el calendario(?)
+// TO DO Pantalla de carga(?)
 // TO DO POSIBLE LIBRERIA un select de Usuarios para asignar dentro del Proyecto. En fragment_new_project.
 
 // TO DO Mencionar al profe en el informe el bug de que si eliminas cosas puede petar, para borrar sin que

@@ -1,5 +1,8 @@
 package com.example.geta;
 
+import static android.content.ContentValues.TAG;
+
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -8,14 +11,22 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.geta.databinding.FragmentBlockBinding;
 import com.example.geta.databinding.FragmentNewTaskBinding;
+import com.github.sundeepk.compactcalendarview.CompactCalendarView;
+import com.github.sundeepk.compactcalendarview.domain.Event;
 import com.google.android.material.snackbar.Snackbar;
 import com.jaredrummler.materialspinner.MaterialSpinner;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
 
 public class NewTaskFragment extends Fragment {
 
@@ -79,6 +90,37 @@ public class NewTaskFragment extends Fragment {
                 Snackbar.make(view, "Usuario " + item + " asignado!", Snackbar.LENGTH_LONG).show();
             }
         });
+
+        setCalendarViewAppearance(view);
+    }
+
+
+    private void setCalendarViewAppearance(@NonNull View view) {
+        SimpleDateFormat dateFormatForMonth = new SimpleDateFormat("MMM - yyyy", new Locale("es", "ES"));
+
+        binding.compactcalendarView.setUseThreeLetterAbbreviation(true);
+        binding.monthText.setText(dateFormatForMonth.format(binding.compactcalendarView.getFirstDayOfCurrentMonth()));
+        binding.compactcalendarView.setListener(new CompactCalendarView.CompactCalendarViewListener() {
+            @Override
+            public void onDayClick(Date dateClicked) {
+                List<Event> events = binding.compactcalendarView.getEvents(dateClicked);
+                binding.compactcalendarView.addEvent(new Event(Color.BLUE,dateClicked.getTime()));
+//                binding.compactcalendarView.addEvent();
+                if (events.size() > 0) {
+                    Log.d(TAG, "Day was clicked: " + dateClicked + " with events " + events);
+                }
+            }
+
+            @Override
+            public void onMonthScroll(Date firstDayOfNewMonth) {
+                binding.compactcalendarView.setCurrentDate(firstDayOfNewMonth);
+                binding.monthText.setText(dateFormatForMonth.format(firstDayOfNewMonth));
+                Log.d(TAG, "Month was scrolled to: " + firstDayOfNewMonth);
+            }
+        });
+
+
+
 
     }
 }

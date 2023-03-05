@@ -27,6 +27,7 @@ public class BlocksMenuFragment extends Fragment {
     private FragmentBlocksMenuBinding binding;
     private BlocksViewModel blocksViewModel;
     private NavController navController;
+    private int posicionQueEliminar;
 
     public BlocksMenuFragment() {
         // Required empty public constructor
@@ -50,6 +51,7 @@ public class BlocksMenuFragment extends Fragment {
 
         blocksViewModel = new ViewModelProvider(requireActivity()).get(BlocksViewModel.class);
         navController = Navigation.findNavController(view);
+        BlocksAdapter blocksAdapter = new BlocksAdapter();
 
         binding.userProfile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,7 +81,18 @@ public class BlocksMenuFragment extends Fragment {
             }
         });
 
-        BlocksAdapter blocksAdapter = new BlocksAdapter();
+        binding.aceptar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Block block = blocksAdapter.obtenerBlock(posicionQueEliminar);
+                blocksViewModel.eliminar(block);
+                binding.areUSure.setVisibility(View.INVISIBLE);
+            }
+        });
+        binding.cancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {binding.areUSure.setVisibility(View.INVISIBLE);}
+        });
 
         binding.blocksMenuRecyclerView.setAdapter(blocksAdapter);
 
@@ -94,10 +107,8 @@ public class BlocksMenuFragment extends Fragment {
 
             @Override
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-                int posicion = viewHolder.getAdapterPosition();
-                Block block = blocksAdapter.obtenerBlock(posicion);
-                blocksViewModel.eliminar(block);
-
+                posicionQueEliminar = viewHolder.getAdapterPosition();
+                binding.areUSure.setVisibility(View.VISIBLE);
             }
         }).attachToRecyclerView(binding.blocksMenuRecyclerView);
 

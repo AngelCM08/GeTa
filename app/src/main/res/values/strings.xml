@@ -18,7 +18,7 @@
     <string name="usuario_asignado">Usuario Asignado</string>
     <string name="nueva_tarea">Nueva Tarea</string>
     <string name="lista">Lista</string>
-    <string name="nombre_proyecto">Nombre Proyecto</string>
+    <string name="nombre_proyecto">Nombre_de_Proyecto</string>
     <string name="siguiente">Siguiente</string>
     <string name="color">Color</string>
     <string name="icono">Icono</string>
@@ -37,4 +37,6 @@
     <string name="angelcm_elpuig_xeill_cat">angelcm@elpuig.xeill.cat</string>
     <string name="angelcm08">angelcm08</string>
     <string name="ngel_castro_merino">Ángel Castro Merino</string>
+    <string name="informaci_n_usuario">Información Usuario</string>
+    <string name="seguro_que_quieres_eliminar_el_proyecto">¿Seguro que quieres eliminar el Proyecto?</string>
 </resources>

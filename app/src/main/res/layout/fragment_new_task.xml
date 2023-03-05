@@ -21,7 +21,7 @@
             android:layout_height="match_parent"
             android:background="@color/dark_blue"
             android:padding="16dp"
-            android:text="@string/proyectos"
+            android:text="@string/nueva_tarea"
             android:textAlignment="center"
             android:textColor="@color/beix"
             android:textSize="34sp"

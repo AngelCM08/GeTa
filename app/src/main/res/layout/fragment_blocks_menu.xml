@@ -142,4 +142,73 @@
             android:layout_gravity="center"
             android:src="@drawable/add" />
     </FrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/are_u_sure"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#3CFFFFFF">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/light_blue"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="15dp">
+
+                <TextView
+                    android:id="@+id/mensaje"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/seguro_que_quieres_eliminar_el_proyecto"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <Button
+                    android:id="@+id/cancelar"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_button_light"
+                    android:textColor="@color/dark_blue"
+                    android:text="@string/cancelar"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="10dp"
+                    app:layout_constraintTop_toBottomOf="@id/mensaje"
+                    app:layout_constraintEnd_toStartOf="@id/aceptar"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <Button
+                    android:id="@+id/aceptar"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_button_dark"
+                    android:textColor="@color/beix"
+                    android:text="@string/aceptar"
+                    android:textSize="16sp"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintTop_toBottomOf="@id/mensaje"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/cancelar"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
